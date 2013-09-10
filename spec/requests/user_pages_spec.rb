@@ -3,12 +3,15 @@ require 'spec_helper'
 describe "User pages" do
 
   subject { page }
-  .
-  .
-  .
-  describe "signup" do
 
+  describe "signup" do
     before { visit signup_path }
+
+
+    it { should have_content('Sign up') }
+    it { should have_title(full_title('Sign up')) }
+  end
+end
 
     let(:submit) { "Create my account" }
 
@@ -25,10 +28,10 @@ describe "User pages" do
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
+    end
 
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
     end
-  end
-end
+  

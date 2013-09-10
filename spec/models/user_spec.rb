@@ -62,6 +62,7 @@ describe "when email format is invalid" do
         expect(@user).to be_valid
       end
     end
+  end
 
 
 describe "when email address is already taken" do
@@ -69,6 +70,7 @@ describe "when email address is already taken" do
       user_with_same_email = @user.dup
       user_with_same_email.save
     end
+  end
 describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
@@ -82,5 +84,4 @@ describe "when password is not present" do
     it { should_not be_valid }
   end
 end
-end
-end
+
